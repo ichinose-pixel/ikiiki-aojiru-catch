@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#075b3a">
+  <meta name="description" content="乳酸菌と野菜の栄養を集める、いきいき乳酸菌とおいしい青汁Wのミニゲーム">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23075a39'/%3E%3Cpath d='M17 19h30l-4 34H21z' fill='%23fff'/%3E%3Cpath d='M21 33h22l-2 17H23z' fill='%238dcc4d'/%3E%3Cpath d='M31 34C20 27 21 15 34 10c4 9 3 18-3 24z' fill='%23b9df45'/%3E%3C/svg%3E">
+  <title>朝の栄養キャッチ｜いきいき乳酸菌とおいしい青汁W</title>
+  <style>
+    :root{--deep:#075a39;--green:#14985d;--lime:#b9df45;--cream:#fffbed;--gold:#f3b928;--red:#e94635}
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html,body{height:100%;margin:0;overflow:hidden;background:#063d2b;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:#173c2d;touch-action:none;user-select:none}
+    button,a{font:inherit}
+    .stage{position:relative;width:min(100vw,56.25vh);height:min(100vh,177.78vw);margin:auto;overflow:hidden;background:linear-gradient(180deg,#dff8ee 0%,#fafff2 42%,#e1f2c5 100%);box-shadow:0 0 60px #001c1488;isolation:isolate}
+    .stage:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 14% 14%,#fff 0 4%,transparent 14%),radial-gradient(circle at 88% 28%,#fff8 0 2%,transparent 12%),linear-gradient(135deg,transparent 45%,#fff7 50%,transparent 55%);opacity:.55;pointer-events:none}
+    .leaf{position:absolute;width:120px;height:55px;border-radius:100% 0 100% 0;background:#3da8671c;transform:rotate(26deg);filter:blur(.2px)}
+    .leaf.l1{left:-45px;top:19%}.leaf.l2{right:-62px;top:35%;transform:rotate(205deg) scale(1.3)}
+    header{position:absolute;z-index:7;top:max(10px,env(safe-area-inset-top));left:12px;right:12px;display:flex;align-items:center;gap:10px}
+    .brand{font-weight:900;color:var(--deep);font-size:clamp(14px,4vw,20px);line-height:1.05;text-shadow:0 1px #fff}
+    .brand small{display:block;font-size:.64em;letter-spacing:.08em;color:#517363;margin-bottom:2px}
+    .timer{margin-left:auto;min-width:58px;padding:6px 8px;border-radius:18px;background:#fff;border:2px solid #83cda5;text-align:center;color:var(--deep);font-weight:900;box-shadow:0 4px 12px #296b4830}
+    .meter{position:absolute;z-index:6;top:62px;left:12px;right:12px;height:20px;border:3px solid #fff;border-radius:12px;background:#bcd4c8;box-shadow:0 3px 9px #23593d33;overflow:hidden}
+    .meterFill{height:100%;width:0;background:linear-gradient(90deg,#59c66f,#b9df45,#f4c540);transition:width .18s ease;box-shadow:inset 0 -3px #16894b33}
+    .meterText{position:absolute;inset:0;display:grid;place-items:center;color:#073d29;font-size:11px;font-weight:900;letter-spacing:.06em;text-shadow:0 1px #fff}
+    .game{position:absolute;inset:86px 0 0;overflow:hidden}
+    .item{position:absolute;z-index:3;left:0;top:0;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;text-align:center;font-weight:900;font-size:13px;line-height:1.05;color:#07553a;background:radial-gradient(circle at 34% 27%,#fff 0 12%,#eaffae 48%,#81c945 100%);border:3px solid #fff;box-shadow:0 6px 0 #3f9a48,0 9px 18px #26653e55;will-change:transform}
+    .item.vit{color:#8b5310;background:radial-gradient(circle at 34% 27%,#fff 0 12%,#ffe68b 48%,#f5ae28 100%);box-shadow:0 6px 0 #ca781f,0 9px 18px #80501f55}
+    .item.lacto{color:#14508e;background:radial-gradient(circle at 34% 27%,#fff 0 12%,#d8f6ff 48%,#6ac9ed 100%);box-shadow:0 6px 0 #329bc5,0 9px 18px #23638355}
+    .item.bad{font-size:25px;background:radial-gradient(circle at 34% 27%,#fff 0 8%,#ffd1cd 44%,#ef685f 100%);box-shadow:0 6px 0 #a93635,0 9px 18px #772a2a55}
+    .item:after{content:"";position:absolute;inset:-9px;border:2px solid #fff8;border-radius:50%;animation:ring 1.2s ease-out infinite}
+    @keyframes ring{to{transform:scale(1.18);opacity:0}}
+    .basket{position:absolute;z-index:5;bottom:28px;left:50%;width:112px;height:105px;transform:translateX(-50%);filter:drop-shadow(0 12px 10px #28583f44);will-change:left}
+    .glass{position:absolute;left:18px;top:9px;width:76px;height:88px;background:linear-gradient(90deg,#fff8,#e9fff4bb 18%,#fff4 50%,#fff9);border:4px solid #fff;border-top-width:6px;border-radius:9px 9px 26px 26px;box-shadow:inset 0 -52px #54a93de6,0 0 0 2px #63a981;transition:filter .15s,transform .15s}
+    .basket.catch .glass{filter:brightness(1.24);transform:scale(1.07)}
+    .glass:before{content:"";position:absolute;left:6px;right:6px;top:24px;height:14px;border-radius:50%;background:#9eda63;box-shadow:0 3px #3d8d3d55}
+    .glass:after{content:"栄養\Aチャージ";white-space:pre;position:absolute;inset:41px 0 0;text-align:center;color:white;font-size:12px;font-weight:900;line-height:1.1;text-shadow:0 1px 2px #17572e}
+    .straw{position:absolute;left:72px;top:0;width:8px;height:58px;border-radius:5px;background:#efc656;transform:rotate(12deg);box-shadow:inset 2px 0 #fff7}
+    .shadow{position:absolute;left:4px;right:4px;bottom:0;height:15px;border-radius:50%;background:#1d573a33}
+    .instruction{position:absolute;z-index:12;left:50%;top:28%;transform:translate(-50%,-50%);width:88%;padding:15px 12px 13px;background:#fffefa;border:3px solid var(--deep);border-radius:18px;text-align:center;font-weight:900;font-size:clamp(18px,5.4vw,27px);line-height:1.25;color:var(--deep);box-shadow:0 8px 0 #075a3930,0 16px 35px #164d383b;animation:guide 2.5s ease forwards;pointer-events:none}
+    .instruction small{display:block;font-size:.6em;color:#4b7663;margin-top:5px}
+    .hand{display:inline-block;animation:swipe 1s ease-in-out infinite}
+    @keyframes swipe{50%{transform:translateX(38px)}}
+    @keyframes guide{0%,72%{opacity:1}100%{opacity:0;visibility:hidden}}
+    .float{position:absolute;z-index:9;font-size:19px;font-weight:1000;color:var(--deep);text-shadow:0 2px #fff,1px 0 #fff,-1px 0 #fff;animation:pop .8s ease-out forwards;pointer-events:none}
+    @keyframes pop{0%{transform:translate(-50%,0) scale(.6);opacity:0}20%{opacity:1;transform:translate(-50%,-8px) scale(1.2)}100%{transform:translate(-50%,-64px) scale(.9);opacity:0}}
+    .combo{position:absolute;z-index:8;top:104px;right:12px;text-align:right;color:#ef7d21;font-size:24px;font-weight:1000;transform:rotate(3deg);text-shadow:0 2px #fff,2px 0 #fff,-2px 0 #fff;opacity:0;transition:.15s}
+    .combo.show{opacity:1;transform:rotate(3deg) scale(1.12)}.combo small{display:block;font-size:11px;color:#267450;letter-spacing:.12em}
+    .bonus{position:absolute;z-index:11;left:50%;top:42%;transform:translate(-50%,-50%) scale(.4);width:88%;padding:16px 10px;text-align:center;background:linear-gradient(135deg,#fff7b0,#fff,#dfffae);border:4px solid #e8b629;border-radius:22px;color:#075a39;font-size:21px;font-weight:1000;box-shadow:0 10px 0 #b47f1833,0 18px 45px #174a3540;opacity:0;pointer-events:none}
+    .bonus strong{display:block;font-size:38px;color:#e07b12;line-height:1}.bonus.on{animation:bonus 1.7s ease forwards}
+    @keyframes bonus{10%,78%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-55%) scale(1.08)}}
+    .end{position:absolute;z-index:30;inset:0;display:flex;flex-direction:column;align-items:center;background:linear-gradient(180deg,#e8fff2 0%,#fff 53%,#daf3c3 100%);opacity:0;visibility:hidden;transform:scale(1.04);transition:.45s ease;padding:max(14px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));text-align:center;overflow:hidden}
+    .end.show{opacity:1;visibility:visible;transform:scale(1)}
+    .end:before{content:"";position:absolute;inset:-30%;background:conic-gradient(from 20deg,#fff0 0 8%,#fff8 8% 12%,#fff0 12% 24%);animation:rays 12s linear infinite;z-index:-1}
+    @keyframes rays{to{transform:rotate(360deg)}}
+    .end .done{font-size:13px;font-weight:900;color:#fff;background:var(--deep);padding:5px 16px;border-radius:20px;letter-spacing:.12em}
+    .end h1{font-size:clamp(23px,7vw,35px);line-height:1.15;color:var(--deep);margin:10px 0 4px}.end h1 em{font-style:normal;color:#e48716}
+    .end .sub{font-size:14px;font-weight:700;margin-bottom:9px;color:#486d5b}
+    .product{width:min(91%,390px);max-height:42vh;object-fit:cover;object-position:top;border-radius:13px;box-shadow:0 9px 25px #1d633c33;border:2px solid #fff}
+    .offer{margin-top:auto;width:100%;background:white;border:2px solid #5eba7a;border-radius:16px;padding:8px 10px 10px;box-shadow:0 7px 0 #1c8c5330}
+    .offer .label{font-size:12px;font-weight:900;color:var(--red)}.price{color:var(--red);font-weight:1000;font-size:31px;line-height:1}.price small{font-size:12px;color:#555}.note{font-size:10px;color:#596860;margin:5px 0}
+    .cta{display:block;width:100%;padding:14px 9px;border-radius:13px;background:linear-gradient(#ff8d38,#ed561f);color:#fff;text-decoration:none;font-size:18px;font-weight:1000;box-shadow:0 5px 0 #aa3918,0 10px 18px #b9452640;animation:pulse 1.35s ease-in-out infinite}
+    @keyframes pulse{50%{transform:scale(1.025)}}
+    .replay{border:0;background:none;color:#476e5c;text-decoration:underline;font-size:12px;margin:9px 0 0;padding:5px}
+    .shake{animation:shake .25s linear}@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+    @media (min-aspect-ratio:9/16){.stage{width:min(100vw,60vh);height:100vh}.end h1{margin-top:5px}.product{max-height:37vh}}
+    @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+    /* Premium casual-game skin */
+    .stage{background:linear-gradient(180deg,#0b7650 0 88px,#e9fff2 88px,#f9fff2 48%,#dff2bd 100%);border-inline:1px solid #ffffff30}
+    .stage:after{content:"";position:absolute;inset:88px 0 0;z-index:-1;background:radial-gradient(circle at 18% 12%,#fff 0 2px,transparent 3px),radial-gradient(circle at 78% 18%,#bbe57f 0 3px,transparent 4px),radial-gradient(circle at 40% 55%,#fff9 0 2px,transparent 3px);background-size:110px 130px,150px 170px,95px 120px;opacity:.7}
+    header{color:#fff}.brand{color:#fff;text-shadow:0 2px 3px #023f2b}.brand small{color:#d6f8e5}.timer{background:linear-gradient(#fff,#eaffd9);border-color:#f5d66b;color:#075a39;box-shadow:0 3px 0 #ba8e2e,0 7px 16px #002b1b66}
+    .meter{top:66px;height:18px;border-color:#eafff2;background:#0b3e2f;box-shadow:inset 0 2px 4px #001d16,0 3px 10px #00281c66}.meterFill{background:linear-gradient(90deg,#54d985,#bde54a,#ffd04b);box-shadow:0 0 12px #caff6d}.meterText{color:#fff;text-shadow:0 1px 2px #003b29}
+    .game{inset:88px 0 0}
+    .item{width:76px;height:76px;border:0;background:#fff;border-radius:50%;box-shadow:0 7px 0 #0a6544,0 11px 22px #17492f55;overflow:visible;animation:bob .8s ease-in-out infinite alternate}
+    .item.bad{background:#5d1010;box-shadow:0 7px 0 #65080b,0 0 0 4px #ff4a40,0 13px 25px #7b151766;animation:danger .48s ease-in-out infinite alternate}
+    .item:after{inset:-7px;border:2px solid #fff9}
+    .spriteCrop{position:absolute;inset:0;overflow:hidden;border-radius:50%;background:#fff}
+    .spriteCrop img{position:absolute;width:300%;height:200%;max-width:none;object-fit:fill;filter:saturate(1.08) contrast(1.04)}
+    .itemLabel{position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);white-space:nowrap;padding:3px 8px;border-radius:10px;background:#fff;color:#075a39;border:1px solid #8dd4aa;font-size:11px;font-weight:900;box-shadow:0 2px 6px #17492f35}
+    .item.bad .itemLabel{background:#d91f27;color:#fff;border-color:#fff;text-shadow:0 1px #7a0000}
+    @keyframes bob{to{margin-top:3px}}@keyframes danger{to{rotate:5deg;scale:1.05}}
+    .basket{width:142px;height:132px;bottom:18px;filter:drop-shadow(0 15px 12px #143b284f)}
+    .basketArt{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:radial-gradient(circle,#fff 0 52%,transparent 53%);transition:transform .15s,filter .15s}
+    .basketArt img{position:absolute;width:300%;height:200%;left:0;top:0;max-width:none}
+    .basket.catch .basketArt{transform:scale(1.13);filter:brightness(1.2) drop-shadow(0 0 14px #d9ff6d)}
+    .basketTag{position:absolute;bottom:0;left:50%;transform:translateX(-50%);padding:4px 13px;border-radius:13px;background:linear-gradient(#fff,#e5ffd7);border:2px solid #0b7650;color:#075a39;font-size:12px;font-weight:1000;white-space:nowrap;box-shadow:0 3px 0 #0c5f42}
+    .instruction{top:30%;border:0;background:linear-gradient(145deg,#fff,#f4ffe6);box-shadow:0 7px 0 #0a6444,0 17px 38px #0d402d42;padding:14px 10px 12px}.instruction:before{content:"TUTORIAL";position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 15px;border-radius:13px;background:#f2bd32;color:#253c1f;font-size:11px;letter-spacing:.12em;box-shadow:0 3px 0 #a97918}.guideRow{display:flex;justify-content:center;gap:12px;align-items:center;margin-top:9px;font-size:11px}.goodGuide,.badGuide{padding:5px 9px;border-radius:10px}.goodGuide{background:#e3f8df;color:#17633d}.badGuide{background:#ffe2df;color:#bd1c24}.badGuide b{font-size:15px}
+    .combo{padding:7px 10px;border-radius:14px;background:#fffdf0;border:2px solid #f4b52b;box-shadow:0 4px 0 #b4731d;color:#e56d17}
+    .bonus{background:linear-gradient(145deg,#fff7ae,#fff,#ddffb8);border-color:#f4bd2f;box-shadow:0 8px 0 #b77b18,0 22px 45px #174a3555}
+    .end{background:radial-gradient(circle at 50% 20%,#fff 0,#eefff4 45%,#d8efb7 100%)}
+    .end .done{background:linear-gradient(90deg,#075a39,#14985d);box-shadow:0 3px 0 #043e29}.end h1{letter-spacing:-.045em;text-shadow:0 2px #fff}.product{border:3px solid #fff;border-radius:18px;box-shadow:0 8px 0 #96c9a8,0 16px 32px #17492f35}
+    .offer{position:relative;border:0;padding:12px 12px 13px;background:linear-gradient(145deg,#fff,#fffbea);box-shadow:0 7px 0 #0b7650,0 14px 28px #17492f38;border-radius:20px}.offer:before{content:"WEB限定";position:absolute;left:10px;top:-12px;background:#e4392c;color:#fff;border-radius:12px;padding:4px 10px;font-size:11px;font-weight:1000;box-shadow:0 3px 0 #9f231b}.offer .label{font-size:13px;color:#b92c21}.price{display:flex;align-items:flex-end;justify-content:center;gap:8px;margin-top:1px;color:var(--red);font-weight:1000;line-height:1}.priceMain{font-size:36px;letter-spacing:-.04em}.priceMain small{font-size:14px;color:#343c37;letter-spacing:0}.shipping{font-size:12px;color:#343c37;padding-bottom:4px;white-space:nowrap}.cta{position:relative;border:2px solid #fff5;padding:15px 10px;background:linear-gradient(180deg,#ff9a3c 0%,#f16023 58%,#df481c 100%);font-size:19px;letter-spacing:.02em;box-shadow:inset 0 2px #fff7,0 6px 0 #a73316,0 12px 22px #b9452648}.cta:before{content:"";position:absolute;inset:3px;border:1px solid #fff4;border-radius:9px;pointer-events:none}.note{margin:6px 0 9px}.replay{margin-top:12px;font-weight:700}
+    @media(max-height:700px){.basket{width:120px;height:112px}.product{max-height:34vh}.end h1{font-size:23px;margin:6px 0 2px}.offer{padding:8px}.cta{padding:11px}.replay{margin-top:7px}}
+    .intro{position:absolute;z-index:60;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 22px;background:radial-gradient(circle at 50% 28%,#faffd9 0 8%,#c8f29b 34%,#37a368 70%,#075a39 100%);overflow:hidden;transition:opacity .45s,visibility .45s}
+    .intro.hide{opacity:0;visibility:hidden;pointer-events:none}.intro:before,.intro:after{content:"";position:absolute;border-radius:50%;border:2px solid #fff4}.intro:before{width:520px;height:520px;top:-190px}.intro:after{width:400px;height:400px;bottom:-250px}
+    .introKicker{position:relative;z-index:2;padding:6px 18px;border-radius:20px;background:#fff;color:#087349;font-weight:1000;font-size:13px;letter-spacing:.08em;box-shadow:0 4px 0 #0a6847;margin-bottom:14px}
+    .titleLogo{position:relative;z-index:2;width:110%;max-width:560px;height:auto;filter:drop-shadow(0 14px 14px #03412c66)}
+    .introCup{position:relative;z-index:2;width:37%;max-width:205px;margin:-12px 0 -2px;filter:drop-shadow(0 18px 12px #043d2b77);animation:introFloat 1.7s ease-in-out infinite alternate}
+    @keyframes introFloat{to{transform:translateY(-8px) rotate(2deg)}}
+    .introRule{position:relative;z-index:2;display:flex;gap:8px;align-items:center;margin:8px 0 16px;padding:8px 12px;border-radius:16px;background:#ffffffdd;color:#19563d;font-size:12px;font-weight:900;box-shadow:0 5px 14px #06412c38}.introRule .avoid{color:#d9292f;border-left:1px solid #bdd4c7;padding-left:9px}
+    .autoStart{position:relative;z-index:2;width:min(82%,350px);padding:12px 14px 10px;border:2px solid #ffffffb8;border-radius:16px;background:#053f2bc7;color:#fff;text-align:center;font-size:17px;font-weight:1000;letter-spacing:.08em;box-shadow:0 9px 22px #063d2b55;overflow:hidden}.autoStart small{display:block;margin-top:3px;font-size:11px;font-weight:700;letter-spacing:.04em;color:#dfffe9}.autoStart:after{content:\"\";position:absolute;left:0;bottom:0;height:5px;width:100%;background:#ffd34e;transform-origin:left;animation:autoProgress 2.8s linear forwards}@keyframes autoProgress{to{transform:scaleX(0)}}
+    .item{background:transparent!important;border-radius:0;box-shadow:none!important;overflow:visible;animation:bob .75s ease-in-out infinite alternate}.item.bad{background:transparent!important;box-shadow:none!important}.item:after{display:none}
+    .spriteCrop{inset:-5px;overflow:hidden;border-radius:0;background:transparent}.spriteCrop img{inset:2px!important;width:calc(100% - 4px)!important;height:calc(100% - 4px)!important;object-fit:contain!important;filter:drop-shadow(0 8px 6px #154b3248) saturate(1.06)}
+    .hazard .spriteCrop{inset:-7px}
+    .itemLabel{bottom:-13px;background:#ffffffed;border:0;box-shadow:0 3px 8px #154b3233;font-size:10px}.item.bad .itemLabel{background:#e6242b;border:2px solid #fff;box-shadow:0 3px 0 #8f171b}
+    .basket{width:145px;height:155px;bottom:8px}.basketArt{inset:0;overflow:visible;background:none;border-radius:0}.basketArt img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 13px 10px #17492f55)}.basketTag{bottom:1px}
+    .end h1{margin:7px 0 6px;font-size:clamp(22px,6.5vw,33px)}.end h1 .punct{display:inline-block;font-size:.58em;vertical-align:.14em;margin-inline:-.05em;color:#3d6655}.end .sub{margin-bottom:7px}.product{width:auto;max-width:min(88%,360px);height:auto;max-height:43vh;object-fit:contain;object-position:center;background:#fff}.offer{margin-top:auto;padding:14px 12px 15px}.offer:before{content:"初回限定キャンペーン"}.offerLead{font-size:14px;font-weight:900;color:#0b6846;margin:2px 0 10px}.cta{font-size:23px;padding:18px 10px}.cta small{display:block;font-size:11px;margin-top:3px;font-weight:700}.offer .label,.price,.note{display:none}
+    @media(max-height:700px){.intro{padding-block:17px}.introKicker{margin-bottom:8px}.titleLogo{width:94%}.introCup{width:30%;margin:-10px 0}.introRule{margin:5px 0 10px}.autoStart{padding:9px 12px 8px}.product{max-height:39vh}}
+  </style>
+</head>
+<body>
+  <main class="stage" id="stage" aria-label="朝の栄養キャッチゲーム">
+    <div class="leaf l1"></div><div class="leaf l2"></div>
+    <section class="intro" id="intro">
+      <div class="introKicker">おいしい1杯を完成させよう！</div>
+      <img class="titleLogo" src="assets/title-logo.png" alt="朝の栄養キャッチ">
+      <img class="introCup" src="assets/aojiru-cup.png" alt="青汁のカップ">
+      <div class="introRule"><span>ヨーグルト・野菜をキャッチ</span><span class="avoid">お菓子は避けよう！</span></div>
+      <div class="autoStart" aria-live="polite">まもなくスタート！<small>グラスを左右にスライド</small></div>
+    </section>
+    <header><div class="brand"><small>いきいき乳酸菌とおいしい青汁W</small>朝の栄養キャッチ</div><div class="timer"><span id="time">15</span>秒</div></header>
+    <div class="meter"><div class="meterFill" id="meter"></div><div class="meterText">栄養チャージ <span id="score">0</span>%</div></div>
+    <div class="game" id="game">
+      <div class="instruction" id="instruction"><span class="hand">☝️</span> グラスを左右に動かそう！<small>からだにうれしい食材をキャッチ</small><div class="guideRow"><span class="goodGuide">ヨーグルト・野菜 ○</span><span class="badGuide"><b>×</b> お菓子は避ける</span></div></div>
+      <div class="combo" id="combo"><small>NICE COMBO!</small><span id="comboNum">0</span>連続</div>
+      <div class="bonus" id="bonus">乳酸菌たっぷり！<strong>201億個</strong>ボーナス</div>
+      <div class="basket" id="basket"><div class="basketArt"><img src="assets/aojiru-cup.png" alt="青汁のグラス"></div><div class="basketTag">ここでキャッチ！</div></div>
+    </div>
+    <section class="end" id="end" aria-hidden="true">
+      <div class="done">朝の栄養チャージ完成！</div>
+      <h1>乳酸菌も<span class="punct">、</span>野菜の栄養も<span class="punct">。</span><br><em>おいしい1杯</em>で新習慣</h1>
+      <div class="sub">内側から、美容と健康をサポート。</div>
+      <img class="product" src="assets/cta-fv.png" alt="いきいき乳酸菌とおいしい青汁W。乳酸菌201億個配合、シリーズ累計1,000万杯突破、おいしかった96%">
+      <div class="offer"><div class="offerLead">毎日続けやすい、抹茶味の青汁</div><a class="cta" href="https://www.e-hapi.com/shop/lp/109624_03.aspx" target="_blank" rel="noopener">お得に試してみる！<small>公式サイトで詳しく見る　›</small></a></div>
+      <button class="replay" id="replay" type="button">もう一度遊ぶ</button>
+    </section>
+  </main>
+  <script>
+  (()=>{
+    const stage=document.getElementById('stage'),game=document.getElementById('game'),basket=document.getElementById('basket'),meter=document.getElementById('meter'),scoreEl=document.getElementById('score'),timeEl=document.getElementById('time'),comboEl=document.getElementById('combo'),comboNum=document.getElementById('comboNum'),bonusEl=document.getElementById('bonus'),end=document.getElementById('end'),replay=document.getElementById('replay'),intro=document.getElementById('intro');
+    let running=false,items=[],score=0,combo=0,time=15,spawnCount=0,startAt=0,raf,timer,spawnTimer;
+    const types=[{c:'lacto collectible',art:'col-yogurt',img:'item-yogurt.webp',t:'ヨーグルト',p:9},{c:'green collectible',art:'col-broccoli',img:'item-broccoli.webp',t:'ブロッコリー',p:7},{c:'green collectible',art:'col-carrot',img:'item-carrot.webp',t:'にんじん',p:7},{c:'green collectible',art:'col-greens',img:'item-barley.webp',t:'大麦若葉',p:7},{c:'vit collectible',art:'col-vitamin',img:'item-vitamin.webp',t:'ビタミン',p:7},{c:'green collectible',art:'col-fiber',img:'item-fiber.webp',t:'食物繊維',p:7},{c:'bad hazard',art:'haz-donut',img:'item-donut.webp',t:'NG！ドーナツ',p:-8},{c:'bad hazard',art:'haz-fries',img:'item-fries.webp',t:'NG！ポテト',p:-8},{c:'bad hazard',art:'haz-cake',img:'item-cake.webp',t:'NG！ケーキ',p:-8},{c:'bad hazard',art:'haz-chips',img:'item-chips.webp',t:'NG！スナック',p:-8}];
+    function move(clientX){if(!running)return;const r=game.getBoundingClientRect(),w=basket.offsetWidth;let x=Math.max(w/2,Math.min(r.width-w/2,clientX-r.left));basket.style.left=x+'px'}
+    game.addEventListener('pointermove',e=>move(e.clientX));game.addEventListener('pointerdown',e=>{move(e.clientX);game.setPointerCapture?.(e.pointerId)});
+    function spawn(forceGood=false){if(!running)return;const r=game.getBoundingClientRect(),guided=spawnCount<2,goodCount=6,data=(forceGood||guided)?types[spawnCount%goodCount]:types[Math.floor(Math.random()*types.length)];const el=document.createElement('div');el.className='item '+data.c+' '+data.art;el.innerHTML='<span class="spriteCrop"><img src="assets/'+data.img+'" alt=""></span><span class="itemLabel">'+data.t+'</span>';const size=Math.max(68,Math.min(88,r.width*.2));el.style.width=el.style.height=size+'px';const x=guided?(r.width-size)/2:10+Math.random()*(r.width-size-20),speed=r.height*(.27+Math.random()*.07),startY=-size-18;game.insertBefore(el,basket);const item={el,x,y:startY,startY,born:performance.now(),size,speed,p:data.p};el.style.transform=`translate3d(${x}px,${startY}px,0)`;items.push(item);spawnCount++;}
+    function floating(x,y,text,bad=false){const f=document.createElement('div');f.className='float';f.textContent=text;f.style.left=x+'px';f.style.top=y+'px';if(bad)f.style.color='#db3c31';game.appendChild(f);setTimeout(()=>f.remove(),850)}
+    function hit(it){it.el.remove();if(it.p>0){score=Math.min(100,score+it.p);combo++;basket.classList.add('catch');setTimeout(()=>basket.classList.remove('catch'),170);floating(it.x+it.size/2,it.y,'GOOD!  +'+it.p+'%');if(combo>=2){comboNum.textContent=combo;comboEl.classList.add('show');setTimeout(()=>comboEl.classList.remove('show'),420)}}else{score=Math.max(0,score+it.p);combo=0;floating(it.x+it.size/2,it.y,'NG！お菓子は避けよう',true);stage.classList.remove('shake');void stage.offsetWidth;stage.classList.add('shake')}meter.style.width=score+'%';scoreEl.textContent=score;}
+    function frame(ts){if(!running)return;const br=basket.getBoundingClientRect(),gr=game.getBoundingClientRect();items=items.filter(it=>{it.y=it.startY+it.speed*((ts-it.born)/1000);it.el.style.transform=`translate3d(${it.x}px,${it.y}px,0)`;const ir={left:gr.left+it.x,right:gr.left+it.x+it.size,top:gr.top+it.y,bottom:gr.top+it.y+it.size};const catchLine=br.top+18;if(ir.bottom>=catchLine&&ir.top<=br.bottom-5&&ir.right>=br.left+8&&ir.left<=br.right-8){hit(it);return false}if(it.y>gr.height+12){it.el.remove();if(it.p>0)combo=0;return false}return true});raf=requestAnimationFrame(frame)}
+    function start(){cancelAnimationFrame(raf);clearInterval(timer);clearInterval(spawnTimer);items.forEach(i=>i.el.remove());items=[];score=0;combo=0;time=15;spawnCount=0;meter.style.width='0';scoreEl.textContent='0';timeEl.textContent='15';end.classList.remove('show');end.setAttribute('aria-hidden','true');basket.style.left='50%';running=true;startAt=performance.now();spawn();spawnTimer=setInterval(()=>spawn(time<=4),550);raf=requestAnimationFrame(frame);timer=setInterval(()=>{const next=Math.max(0,Math.ceil(15-(performance.now()-startAt)/1000));if(next!==time){time=next;timeEl.textContent=time;if(time===4){bonusEl.classList.remove('on');void bonusEl.offsetWidth;bonusEl.classList.add('on')}}if(time<=0)finish()},250)}
+    function finish(){if(!running)return;running=false;clearInterval(timer);clearInterval(spawnTimer);cancelAnimationFrame(raf);items.forEach(i=>i.el.remove());items=[];score=100;meter.style.width='100%';scoreEl.textContent='100';setTimeout(()=>{end.classList.add('show');end.setAttribute('aria-hidden','false')},450)}
+    setTimeout(()=>{intro.classList.add('hide');setTimeout(start,280)},2800);replay.addEventListener('click',start);window.addEventListener('resize',()=>{basket.style.left='50%'});
+  })();
+  </script>
+</body>
+</html>
