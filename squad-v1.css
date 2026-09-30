@@ -1,0 +1,412 @@
+/* Squad beyond CSS欄：styleタグを付けず、このファイルを全て貼り付け */
+html, body { margin:0!important; padding:0!important; min-width:0!important; background:#073e2d; }
+#aojiru-lp { display:block; width:100%; max-width:none; margin:0 auto; padding:0; line-height:1.5; isolation:isolate; }
+#aojiru-lp *, #aojiru-lp *::before, #aojiru-lp *::after { box-sizing:border-box; }
+#aojiru-lp img { height:auto; }
+#aojiru-lp { --deep:#075a39;--orange:#ec5822;--ink:#184a36 }
+#aojiru-lp * { box-sizing:border-box;-webkit-tap-highlight-color:transparent }
+#aojiru-lp { scroll-behavior:smooth }
+#aojiru-lp { margin:0;background:#073e2d;color:var(--ink);font-family:"Hiragino Kaku Gothic ProN",Meiryo,sans-serif }
+#aojiru-lp button,
+#aojiru-lp a { font:inherit }
+#aojiru-lp button { cursor:pointer }
+#aojiru-lp a { color:inherit }
+#aojiru-lp img { max-width:100%;display:block }
+#aojiru-lp button:focus-visible,
+#aojiru-lp a:focus-visible { outline:4px solid #f6bd34;outline-offset:4px }
+#aojiru-lp [hidden] { display:none!important }
+#aojiru-lp .stage,
+#aojiru-lp .story { width:min(100%,520px);margin:auto;background:#f8fff0 }
+#aojiru-lp .stage { height:100svh;min-height:540px;max-height:960px;position:relative;overflow:hidden;background:linear-gradient(#e4f6db,#fbfff4 65%,#b9db83);isolation:isolate }
+#aojiru-lp .intro { position:absolute;z-index:60;inset:0;display:flex;align-items:center;flex-direction:column;justify-content:center;padding:20px;background:radial-gradient(ellipse at 50% 25%,#f8ffce,#caee9d 45%,#70b55d);transition:opacity .3s }
+#aojiru-lp .intro.hide { opacity:0;visibility:hidden;pointer-events:none }
+#aojiru-lp .eyebrow { font-weight:bold;font-size:14px;letter-spacing:.08em }
+#aojiru-lp .introKicker { background:#075a39;color:white;padding:8px 20px;border-radius:50px;font-size:16px;font-weight:bold }
+#aojiru-lp .titleLogo { width:min(100%,420px);margin:14px 0 0 }
+#aojiru-lp .introCup { width:120px;height:128px;object-fit:contain;margin:-5px 0 6px;filter:drop-shadow(0 10px 10px #174a3540) }
+#aojiru-lp .intro h1 { font-size:21px;margin:4px 0 12px;text-align:center;line-height:1.55 }
+#aojiru-lp .intro h1 span { font-size:15px;font-weight:normal }
+#aojiru-lp .start,
+#aojiru-lp .cta { border:0;display:block;text-align:center;background:linear-gradient(#f87c32,#df451d);color:#fff;border-radius:12px;padding:16px 14px;font-weight:bold;text-decoration:none;box-shadow:0 5px 0 #a83416;width:100%;font-size:21px }
+#aojiru-lp .start small { font-size:14px;display:block;margin-top:4px }
+#aojiru-lp .introOffer { text-align:center;margin:20px 0 8px;font-size:14px;line-height:1.8 }
+#aojiru-lp .introOffer strong { font-size:21px;color:#b53517 }
+#aojiru-lp .textButton { background:none;border:0;text-decoration:underline;padding:12px;color:#245539;font-size:14px }
+#aojiru-lp .skip { position:absolute;bottom:7px;right:12px;z-index:70;font-size:13px;padding:8px }
+#aojiru-lp .intro:not(.hide)~.skip { display:none }
+#aojiru-lp header { position:absolute;top:0;left:0;right:0;height:76px;background:#075a39;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 18px }
+#aojiru-lp .brand { font-size:20px;font-weight:bold }
+#aojiru-lp .brand small { display:block;font-size:12px;margin-bottom:3px }
+#aojiru-lp .timer { background:#fff9d7;color:#075a39;padding:8px 13px;border-radius:12px;font-weight:bold;font-size:18px }
+#aojiru-lp .timer span { font-size:27px }
+#aojiru-lp .meter { position:absolute;top:85px;left:18px;right:18px;height:24px;border-radius:20px;background:#bad5ac;overflow:hidden;border:2px solid white }
+#aojiru-lp .meterFill { height:100%;width:0;background:#92cc31;transition:width .2s }
+#aojiru-lp .meterText { position:absolute;inset:0;text-align:center;font-size:13px;font-weight:bold;line-height:20px }
+#aojiru-lp .game { position:absolute;inset:116px 0 42px;touch-action:none;overflow:hidden }
+#aojiru-lp .instruction { position:absolute;z-index:12;top:18px;width:100%;text-align:center;font-size:18px;font-weight:bold;pointer-events:none;animation:aojiru-guide 3s forwards }
+#aojiru-lp .instruction small { display:block;font-size:13px;margin-top:6px }
+#aojiru-lp .instruction span { background:#fffef0;padding:10px 14px;border-radius:14px;display:inline-block }
+@keyframes aojiru-guide { 0%,65%{opacity:1}100%{opacity:0} }
+#aojiru-lp .item { position:absolute;left:0;top:0;z-index:3;will-change:transform }
+#aojiru-lp .spriteCrop { position:absolute;inset:0 }
+#aojiru-lp .spriteCrop img { width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 5px 5px #24442a30) }
+#aojiru-lp .itemLabel { position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);white-space:nowrap;border-radius:20px;background:#fff;padding:4px 7px;font-size:12px;font-weight:bold }
+#aojiru-lp .bad .itemLabel { background:#cf3934;color:#fff }
+#aojiru-lp .basket { position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:135px;height:143px;z-index:5 }
+#aojiru-lp .basketArt img { width:100%;height:100%;object-fit:contain }
+#aojiru-lp .basket.catch .basketArt { transform:scale(1.08) }
+#aojiru-lp .basketTag { position:absolute;bottom:0;left:50%;transform:translateX(-50%);white-space:nowrap;border-radius:20px;background:white;padding:5px 10px;font-size:12px;font-weight:bold }
+#aojiru-lp .combo { position:absolute;right:10px;top:70px;z-index:8;opacity:0;background:#fffad6;border-radius:12px;padding:8px;color:#bd5418;font-size:24px;font-weight:bold }
+#aojiru-lp .combo small { display:block;font-size:12px }
+#aojiru-lp .combo.show { opacity:1 }
+#aojiru-lp .bonus { position:absolute;z-index:10;top:35%;width:100%;text-align:center;font-size:22px;font-weight:bold;opacity:0;pointer-events:none;text-shadow:0 2px white }
+#aojiru-lp .bonus strong { display:block;font-size:30px }
+#aojiru-lp .bonus.on { animation:aojiru-guide 1.5s forwards }
+#aojiru-lp .float { position:absolute;z-index:9;font-weight:bold;color:#075a39;text-shadow:0 2px white;white-space:nowrap;pointer-events:none;animation:aojiru-pop .8s forwards }
+@keyframes aojiru-pop { from{transform:translate(-50%,0)}to{transform:translate(-50%,-55px);opacity:0} }
+#aojiru-lp .end { display:none }
+#aojiru-lp .story { padding-bottom:112px;background:#fff }
+#aojiru-lp .result { padding:12px;background:#075a39;color:#fff;text-align:center;font-size:15px;font-weight:bold }
+#aojiru-lp .storyHero { padding:30px 24px 26px;text-align:center;background:linear-gradient(#f0f8db,#fff) }
+#aojiru-lp h2 { font-size:30px;line-height:1.55;margin:10px 0 16px;letter-spacing:-.04em }
+#aojiru-lp h2 em { font-style:normal;color:#148548 }
+#aojiru-lp .storyHero p { line-height:1.9;font-size:16px }
+#aojiru-lp .productVisual { width:100%;height:auto }
+#aojiru-lp .storyHero .productName { font-size:18px;font-weight:bold;line-height:1.7 }
+#aojiru-lp .section { padding:34px 24px }
+#aojiru-lp .section:nth-child(even) { background:#f4f8ed }
+#aojiru-lp .section h3 { font-size:26px;line-height:1.6;margin:10px 0 16px;letter-spacing:-.04em }
+#aojiru-lp .section p { font-size:16px;line-height:1.9;margin:12px 0 }
+#aojiru-lp .section .number { font-size:13px;font-weight:bold;letter-spacing:.14em;color:#488438 }
+#aojiru-lp .featureImg { width:100%;height:auto;border-radius:14px;margin:18px 0 }
+#aojiru-lp .nutrients { display:flex;gap:8px;justify-content:center;margin:22px 0 8px }
+#aojiru-lp .nutrients span { flex:1;background:#e6f1d9;text-align:center;padding:17px 3px;border-radius:12px;font-size:15px;font-weight:bold }
+#aojiru-lp .offerSection { padding:32px 24px;background:#eef5dd;text-align:center }
+#aojiru-lp .offerLabel { background:#075a39;color:#fff;padding:8px 15px;border-radius:30px;display:inline-block;font-size:15px;font-weight:bold }
+#aojiru-lp .offerSection h3 { font-size:23px;line-height:1.6;margin:16px 0 }
+#aojiru-lp .priceRow { display:flex;justify-content:center;align-items:baseline;gap:4px;color:#c13b1f }
+#aojiru-lp .priceRow strong { font-size:64px;letter-spacing:-.06em }
+#aojiru-lp .priceRow span { font-size:23px;font-weight:bold }
+#aojiru-lp .priceRow small { font-size:14px }
+#aojiru-lp .offerSection p { font-size:14px;line-height:1.8 }
+#aojiru-lp .single { font-weight:bold;font-size:19px!important }
+#aojiru-lp .offerSection .cta { margin:20px 0 }
+#aojiru-lp .fine { font-size:12px!important;color:#52634c }
+#aojiru-lp footer { padding:24px;text-align:center;font-size:12px;color:#60735c;line-height:1.9 }
+#aojiru-lp .sticky { position:fixed;z-index:90;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,520px);padding:12px 14px max(14px,env(safe-area-inset-bottom));background:#fffffff5;border-top:1px solid #dce5d7;display:flex;align-items:center;gap:14px;box-shadow:0 -4px 20px #143d2110 }
+#aojiru-lp .sticky div { white-space:nowrap;font-size:12px;line-height:1.6 }
+#aojiru-lp .sticky strong { font-size:24px;color:#b9381a }
+#aojiru-lp .sticky .cta { font-size:17px;padding:15px 8px;flex:1 }
+#aojiru-lp .replay { border:1px solid #648959;border-radius:40px;background:transparent;padding:12px 24px;font-size:15px;color:#28553b }
+@media(max-height:700px) {
+#aojiru-lp .intro { padding:16px }
+#aojiru-lp .introCup { width:88px;height:88px }
+#aojiru-lp .titleLogo { width:80%;max-height:165px;object-fit:contain }
+#aojiru-lp .intro h1 { font-size:18px;margin:5px 0 8px }
+#aojiru-lp .introKicker { font-size:14px;padding:6px 14px }
+#aojiru-lp .introOffer { margin:12px 0 0 }
+#aojiru-lp .start { padding:12px }
+#aojiru-lp .introOffer strong { font-size:19px }
+#aojiru-lp .basket { width:116px;height:123px }
+}
+@media(prefers-reduced-motion:reduce) {
+#aojiru-lp { scroll-behavior:auto }
+#aojiru-lp * { animation-duration:.01ms!important }
+}
+#aojiru-lp { --lp-font:"メイリオ",Meiryo,"Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif }
+#aojiru-lp { font-family:var(--lp-font) }
+#aojiru-lp .premium { --forest:#124b30;--leaf:#44822b;--gold:#b59141;--paper:#fffdf6;background:var(--paper);color:#24482f;padding-bottom:0;overflow:hidden }
+#aojiru-lp .premium figure,
+#aojiru-lp .premium p { margin:0 }
+#aojiru-lp .premium h2,
+#aojiru-lp .premium h3 { font-family:var(--lp-font);font-weight:800;letter-spacing:-.04em }
+#aojiru-lp .premium em { font-style:normal }
+#aojiru-lp .resultBar { display:flex;gap:9px;justify-content:center;align-items:center;padding:12px 16px;background:#174e32;color:#fff;font-size:13px;letter-spacing:.04em }
+#aojiru-lp .resultMark { width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#e3eecf;color:#184e30;font-weight:bold }
+#aojiru-lp .productHero { text-align:center;padding:32px 0 0;background:linear-gradient(#fffdf5 0%,#f6f9de 50%,#fff 100%) }
+#aojiru-lp .bridgeCopy { font-size:14px;font-weight:bold;color:#578143;letter-spacing:.08em }
+#aojiru-lp .productHero h2 { font-size:clamp(32px,8.5vw,45px);line-height:1.45;margin:14px 12px 12px;color:#194929 }
+#aojiru-lp .productHero h2 span { color:#518331 }
+#aojiru-lp .heroSub { font-size:16px;line-height:1.9;letter-spacing:.04em }
+#aojiru-lp .productPhoto { position:relative;margin-top:15px!important }
+#aojiru-lp .productPhoto img { width:100%;height:auto }
+#aojiru-lp .productPhoto figcaption { position:absolute;right:10px;bottom:8px;font-size:10px;color:#5a6151;background:#ffffffbf;padding:2px 3px }
+#aojiru-lp .productIdentity { padding:7px 14px 20px;background:#fff }
+#aojiru-lp .productIdentity p { font-size:18px;font-weight:bold;letter-spacing:-.025em }
+#aojiru-lp .productIdentity p span { color:#9e731b;font-size:25px;padding-left:2px }
+#aojiru-lp .productIdentity small { display:block;font-size:12px;margin-top:5px;color:#687260;letter-spacing:.12em }
+#aojiru-lp .heroPoints { display:grid;grid-template-columns:1fr 1fr 1.2fr;padding:0 13px 24px;background:white }
+#aojiru-lp .heroPoints>div { display:flex;flex-direction:column;gap:3px;align-items:center;padding:6px 4px;border-right:1px solid #d5dcc6 }
+#aojiru-lp .heroPoints>div:last-child { border:0 }
+#aojiru-lp .heroPoints small { font-size:11px;color:#65804c }
+#aojiru-lp .heroPoints strong { font-size:32px;line-height:1.3;color:#386323;font-family:var(--lp-font) }
+#aojiru-lp .heroPoints strong span { font-family:var(--lp-font);font-size:12px;padding-left:3px }
+#aojiru-lp .heroPoints b { font-size:13px }
+#aojiru-lp .heroPoints>div:last-child strong { font-size:27px;color:#b05725;line-height:1.6 }
+#aojiru-lp .heroPoints>div:last-child b { font-size:10px;letter-spacing:-.06em }
+#aojiru-lp .offerJump { display:block;padding:16px 10px;background:#eef2dc;border-block:1px solid #d9e0bd;text-decoration:none;font-size:13px;color:#476332 }
+#aojiru-lp .offerJump strong { font-size:24px;color:#a84522;font-family:var(--lp-font) }
+#aojiru-lp .offerJump small { font-size:11px }
+#aojiru-lp .offerJump>span { display:block;font-size:13px;text-decoration:underline;text-underline-offset:4px;margin-top:7px }
+#aojiru-lp .chapter { display:flex;align-items:center;gap:12px;margin:0 24px 19px }
+#aojiru-lp .chapter>span { font-family:var(--lp-font);font-style:italic;font-size:32px;color:#a99c69;line-height:1 }
+#aojiru-lp .chapter p { font-size:13px;letter-spacing:.03em;font-weight:bold }
+#aojiru-lp .chapter:after { content:"";flex:1;height:1px;background:#c8cfb7 }
+#aojiru-lp .premium section>h3 { font-size:clamp(27px,7vw,35px);line-height:1.6;margin:0 24px 24px }
+#aojiru-lp .tasteSection { padding:45px 0 36px;background:#fffdf7 }
+#aojiru-lp .tasteSection>h3 { font-size:clamp(25px,6.8vw,34px)!important }
+#aojiru-lp .tastePhoto { position:relative }
+#aojiru-lp .tastePhoto img { width:100%;height:auto }
+#aojiru-lp .tastePhoto figcaption { position:absolute;right:10px;bottom:9px;background:#fff9;padding:3px 5px;font-size:10px }
+#aojiru-lp .tasteCopy { padding:24px 24px 20px }
+#aojiru-lp .tasteCopy .statement { font-family:var(--lp-font);font-size:26px;font-weight:bold;line-height:1.7 }
+#aojiru-lp .tasteCopy em { color:#668834;text-decoration:underline;text-decoration-color:#cbd998;text-decoration-thickness:6px;text-underline-offset:-2px;text-decoration-skip-ink:none }
+#aojiru-lp .tasteCopy>p+p { margin-top:13px;font-size:14px;line-height:2;color:#53634c }
+#aojiru-lp .matchaPhoto { width:calc(100% - 48px);height:auto;margin:0 24px;border-radius:3px }
+#aojiru-lp .nutritionSection { padding:40px 24px 34px;background:#184b35;color:#fff }
+#aojiru-lp .nutritionSection .chapter { margin-inline:0 }
+#aojiru-lp .chapter.light>span { color:#c5d79b }
+#aojiru-lp .chapter.light p { color:#e1eacb }
+#aojiru-lp .chapter.light:after { background:#63836c }
+#aojiru-lp .premium .nutritionSection>h3 { margin-inline:0;font-size:clamp(27px,6.8vw,34px);margin-bottom:25px }
+#aojiru-lp .nutritionSection h3 em { color:#d3e5a1 }
+#aojiru-lp .lactoPanel { background:#f9fbef;border-radius:5px;color:#234a39;padding:22px 18px 12px;text-align:center }
+#aojiru-lp .panelKicker { font-size:15px;letter-spacing:.04em;font-weight:bold }
+#aojiru-lp .bigNumber { font-size:82px!important;font-family:var(--lp-font);line-height:1.3;letter-spacing:-.07em;color:#265538;white-space:nowrap }
+#aojiru-lp .bigNumber small { font-family:var(--lp-font);font-size:15px;margin-right:8px;letter-spacing:0 }
+#aojiru-lp .bigNumber span { font-family:var(--lp-font);font-size:26px;letter-spacing:0;margin-left:7px }
+#aojiru-lp .lactoPair { display:grid;grid-template-columns:1fr 24px 1fr;align-items:center;margin-top:8px }
+#aojiru-lp .lactoPair>div { display:flex;align-items:center;gap:8px;text-align:left }
+#aojiru-lp .lactoPair img { width:50px;height:50px;border-radius:50%;object-fit:cover;border:3px solid white }
+#aojiru-lp .lactoPair p { font-size:13px;line-height:1.8;white-space:nowrap }
+#aojiru-lp .lactoPair p strong { display:block;font-size:25px;line-height:1.2;font-family:var(--lp-font) }
+#aojiru-lp .lactoPair p strong span { font-size:12px;margin-left:3px;font-family:var(--lp-font) }
+#aojiru-lp .plus { font-size:22px;color:#97ae6d }
+#aojiru-lp .microNote { font-size:10px!important;color:#79866e;margin-top:15px!important }
+#aojiru-lp .nutritionNumbers { display:grid;grid-template-columns:1fr 1fr;margin-top:22px;border:1px solid #90a77666;border-radius:5px }
+#aojiru-lp .nutritionNumbers>div { padding:15px 8px;display:flex;align-items:center;justify-content:center;gap:10px }
+#aojiru-lp .nutritionNumbers>div+div { border-left:1px solid #90a77666 }
+#aojiru-lp .nutritionNumbers span { font-size:11px;line-height:1.6;color:#dce8cf }
+#aojiru-lp .nutritionNumbers strong { font-family:var(--lp-font);font-size:40px;color:#dbeaaf;font-weight:normal;white-space:nowrap }
+#aojiru-lp .nutritionNumbers small { font-size:12px;font-family:var(--lp-font);margin-left:3px }
+#aojiru-lp .nutritionText { text-align:center;font-size:15px;line-height:1.9;margin-top:22px!important;color:#e2ebd8 }
+#aojiru-lp .sourceDetail { margin-top:18px;font-size:13px;color:#e0e9d5 }
+#aojiru-lp .sourceDetail summary { cursor:pointer;text-align:center;list-style:none;padding:10px;border-block:1px solid #5b7965 }
+#aojiru-lp .sourceDetail summary:after { content:"＋";margin-left:12px }
+#aojiru-lp .sourceDetail[open] summary:after { content:"−" }
+#aojiru-lp .sourceDetail img { width:100%;margin-top:12px;background:#fff;border-radius:4px }
+#aojiru-lp .ingredientsSection { padding:42px 24px 32px;background:#faf8ec }
+#aojiru-lp .ingredientsSection .chapter { margin-inline:0 }
+#aojiru-lp .premium .ingredientsSection>h3 { margin-inline:0;margin-bottom:14px }
+#aojiru-lp .ingredientsSection h3 em { color:#749044 }
+#aojiru-lp .sectionIntro { font-size:14px;line-height:1.95;color:#5d694c }
+#aojiru-lp .originPair { display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:22px }
+#aojiru-lp .originPair>div { display:flex;align-items:center;justify-content:center;flex-direction:column;padding:12px 5px;background:#e7ecd5;border-radius:4px;border-bottom:2px solid #879e5b }
+#aojiru-lp .originPair small { font-size:12px;color:#667649 }
+#aojiru-lp .originPair strong { font-size:20px;font-family:var(--lp-font);line-height:1.6 }
+#aojiru-lp .ingredientsPhoto { margin-top:18px!important }
+#aojiru-lp .ingredientsPhoto img { width:100%;height:auto;mix-blend-mode:multiply }
+#aojiru-lp .freeFrom { display:grid;grid-template-columns:repeat(3,1fr);margin-top:20px;gap:8px }
+#aojiru-lp .freeFrom>span { text-align:center;border:1px solid #c2cbae;border-radius:50%;aspect-ratio:1;display:flex;flex-direction:column;justify-content:center;font-size:13px;color:#68734e }
+#aojiru-lp .freeFrom strong { font-size:17px;display:block;margin-top:4px;color:#3b5a31 }
+#aojiru-lp .routineSection { display:grid;grid-template-columns:43% 57%;background:#edf0da }
+#aojiru-lp .routineSection>img { width:100%;height:100%;max-height:380px;object-fit:cover;object-position:center }
+#aojiru-lp .routineSection>div { padding:30px 18px }
+#aojiru-lp .routineLabel { font-size:12px;color:#668040;font-weight:bold }
+#aojiru-lp .routineSection h3 { font-size:27px;line-height:1.7;margin:8px 0 14px;color:#325c2d }
+#aojiru-lp .routineSection div>p:last-child { font-size:13px;line-height:1.9;color:#5d714a }
+#aojiru-lp .trialSection { padding:40px 20px 30px;background:linear-gradient(145deg,#e3edcf,#f8faef 60%,#dfeaca) }
+#aojiru-lp .trialIntro { text-align:center }
+#aojiru-lp .trialIntro>p { font-size:13px;letter-spacing:.1em;color:#6a834e }
+#aojiru-lp .trialIntro h3 { font-size:32px;line-height:1.55;margin:12px 0 25px;color:#244d2d }
+#aojiru-lp .trialCard { background:#fff;border:1px solid #c3d1a1;border-radius:7px;overflow:hidden;box-shadow:0 10px 28px #34491e15 }
+#aojiru-lp .trialRibbon { background:#265939;color:#fff;text-align:center;padding:13px 8px;font-size:14px;font-weight:bold;letter-spacing:.01em }
+#aojiru-lp .trialProduct { width:100%;height:auto }
+#aojiru-lp .trialBody { padding:0 22px 23px;text-align:center }
+#aojiru-lp .trialBody h4 { font-size:16px;line-height:1.7;margin:0 }
+#aojiru-lp .quantity { font-size:13px;color:#687b57;margin-top:5px!important }
+#aojiru-lp .priceCompare { display:flex;align-items:center;justify-content:center;gap:12px;margin-top:22px }
+#aojiru-lp .priceCompare>span { font-size:13px;color:#666b5c }
+#aojiru-lp .priceCompare small { font-size:10px }
+#aojiru-lp .priceCompare b { font-size:16px;color:#fff;background:#b24e2d;padding:5px 10px;border-radius:3px }
+#aojiru-lp .trialPrice { display:flex;justify-content:center;align-items:center;gap:8px;margin-top:5px;color:#b34424 }
+#aojiru-lp .trialPrice strong { font-family:var(--lp-font);font-size:76px;letter-spacing:-.07em;line-height:1.2 }
+#aojiru-lp .trialPrice>div { display:flex;flex-direction:column;align-items:center;margin-top:9px }
+#aojiru-lp .trialPrice span { font-size:25px;font-weight:bold }
+#aojiru-lp .trialPrice small { font-size:12px }
+#aojiru-lp .shippingLine { font-size:13px;color:#676f5c;line-height:1.8;margin-top:3px!important }
+#aojiru-lp .shippingLine span { display:block }
+#aojiru-lp .noSubscription { margin:17px 0!important;padding:11px 4px;border-block:1px solid #dce5d0;font-size:17px;font-weight:bold;color:#3e6932 }
+#aojiru-lp .noSubscription>span { color:#70934a }
+#aojiru-lp .purchaseButton { display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;background:linear-gradient(#e88431,#d66323);border:1px solid #cb5718;border-radius:7px;color:#fff;box-shadow:0 4px 0 #a44b19,inset 0 1px #ffffff40;text-align:center;padding:13px 10px;font-weight:bold }
+#aojiru-lp .purchaseButton:hover { filter:brightness(1.06) }
+#aojiru-lp .purchaseButton small { font-size:11px;font-weight:normal;margin-bottom:3px }
+#aojiru-lp .purchaseButton strong { font-size:24px;line-height:1.6;letter-spacing:.04em }
+#aojiru-lp .purchaseButton>span { font-size:11px;opacity:.88;font-weight:normal;margin-top:2px }
+#aojiru-lp .trialNote { font-size:11px;color:#7d8473;line-height:1.8;margin-top:15px!important }
+#aojiru-lp .premiumReplay { display:block;margin:25px auto 0;padding:10px 20px;font-size:13px;border-color:#b8c69e;color:#677653;background:#ffffff40 }
+#aojiru-lp .premiumFooter { padding:26px 20px 135px;background:#f8f9f2;color:#738066;text-align:center }
+#aojiru-lp .premiumFooter p { font-size:14px;font-weight:bold }
+#aojiru-lp .premiumFooter>span { display:block;font-size:12px;margin-top:5px }
+#aojiru-lp .premiumFooter>small { display:block;font-size:10px;line-height:1.9;margin-top:15px }
+#aojiru-lp .premiumSticky { padding:10px 15px max(12px,env(safe-area-inset-bottom));gap:12px;box-shadow:0 -4px 20px #17452a15;border-top:1px solid #d0dac2;background:#fffffff7 }
+#aojiru-lp .premiumSticky>div { line-height:1.35 }
+#aojiru-lp .premiumSticky>div>small { display:block;font-size:10px;color:#52663f }
+#aojiru-lp .premiumSticky>div>span { display:block;font-size:12px;color:#a74825 }
+#aojiru-lp .premiumSticky>div>span strong { font-size:29px;letter-spacing:-.04em;font-family:var(--lp-font);color:#ad4826 }
+#aojiru-lp .premiumSticky>div>span small { font-size:10px;color:#627052 }
+#aojiru-lp .premiumSticky .purchaseButton { flex:1;min-height:51px;padding:10px 5px;white-space:nowrap;font-size:16px }
+#aojiru-lp .premium #aojiru-offer { scroll-margin-top:12px }
+#aojiru-lp .premium #aojiru-storyTitle:focus { outline:none }
+@media(min-width:521px) {
+#aojiru-lp .premium .chapter { margin-bottom:24px }
+#aojiru-lp .premium .tasteCopy { padding-block:30px }
+#aojiru-lp .premium .tasteCopy .statement { font-size:30px }
+#aojiru-lp .premium .lactoPair img { width:64px;height:64px }
+#aojiru-lp .premium .lactoPair>div { gap:12px }
+#aojiru-lp .premium .nutritionNumbers strong { font-size:46px }
+#aojiru-lp .premium .nutritionNumbers span { font-size:13px }
+}
+@media(max-width:360px) {
+#aojiru-lp .premium .chapter { margin-inline:18px;gap:8px }
+#aojiru-lp .premium .chapter p { font-size:11px }
+#aojiru-lp .premium .productIdentity p { font-size:15px }
+#aojiru-lp .premium .heroPoints { padding-inline:7px }
+#aojiru-lp .premium .heroPoints small { font-size:10px }
+#aojiru-lp .premium .heroPoints>div:last-child b { font-size:9px }
+#aojiru-lp .premium .offerJump small { font-size:10px }
+#aojiru-lp .premium .tasteCopy { padding-inline:18px }
+#aojiru-lp .premium .tasteCopy .statement { font-size:22px }
+#aojiru-lp .premium .tasteCopy>p+p { font-size:12px }
+#aojiru-lp .premium .nutritionSection,
+#aojiru-lp .premium .ingredientsSection { padding-inline:18px }
+#aojiru-lp .premium .nutritionSection .chapter,
+#aojiru-lp .premium .ingredientsSection .chapter { margin-inline:0 }
+#aojiru-lp .premium .lactoPanel { padding-inline:10px }
+#aojiru-lp .premium .lactoPair img { width:38px;height:38px }
+#aojiru-lp .premium .lactoPair>div { gap:5px }
+#aojiru-lp .premium .lactoPair p { font-size:11px }
+#aojiru-lp .premium .nutritionNumbers>div { gap:5px }
+#aojiru-lp .premium .nutritionNumbers strong { font-size:32px }
+#aojiru-lp .premium .nutritionNumbers span { font-size:10px }
+#aojiru-lp .premium .routineSection>div { padding:23px 12px }
+#aojiru-lp .premium .routineSection h3 { font-size:24px }
+#aojiru-lp .premium .trialSection { padding-inline:12px }
+#aojiru-lp .premium .trialBody { padding-inline:15px }
+#aojiru-lp .premium .trialPrice strong { font-size:69px }
+#aojiru-lp .premiumSticky { padding-inline:9px;gap:8px }
+#aojiru-lp .premiumSticky .purchaseButton { font-size:14px }
+#aojiru-lp .premiumSticky>div>small { font-size:9px }
+}
+#aojiru-lp .premium { font-family:var(--lp-font) }
+#aojiru-lp .premium h2,
+#aojiru-lp .premium h3 { font-family:var(--lp-font);font-weight:800;letter-spacing:-.045em }
+#aojiru-lp .productHero h2 { font-size:clamp(30px,8vw,40px);line-height:1.5 }
+#aojiru-lp .chapter>span { font-family:var(--lp-font);font-style:normal;font-size:27px;font-weight:800 }
+#aojiru-lp .tasteCopy .statement { font-family:var(--lp-font);font-weight:800;font-size:24px;line-height:1.7 }
+#aojiru-lp .bigNumber { font-weight:800;font-size:74px!important;letter-spacing:-.065em }
+#aojiru-lp .lactoPair p strong { font-weight:800 }
+#aojiru-lp .nutritionNumbers strong { font-weight:800;font-size:37px }
+#aojiru-lp .trialPrice strong { font-weight:800;font-variant-numeric:tabular-nums;font-size:72px }
+#aojiru-lp .heroPoints strong { font-weight:800;font-size:30px }
+#aojiru-lp .originPair strong { font-weight:800;font-size:19px }
+#aojiru-lp .premium .routineSection h3 { font-size:25px }
+#aojiru-lp .premium .trialIntro h3 { font-size:30px }
+#aojiru-lp .premiumSticky>div>span strong { font-size:27px;font-variant-numeric:tabular-nums }
+#aojiru-lp .premium .heroPoints>div:last-child b { font-size:11px;line-height:1.6;letter-spacing:-.06em }
+#aojiru-lp .premium .trialBody h4 { line-height:1.8 }
+#aojiru-lp .premium .noSubscription { font-size:16px }
+#aojiru-lp .premium .purchaseButton strong { font-size:23px }
+#aojiru-lp .premium .chapter p { line-height:1.6 }
+@media(min-width:521px) {
+#aojiru-lp .premium .tasteCopy .statement { font-size:27px }
+#aojiru-lp .premium .nutritionNumbers strong { font-size:40px }
+}
+@media(max-width:360px) {
+#aojiru-lp .premium section>h3 { font-size:25px }
+#aojiru-lp .premium .tasteCopy .statement { font-size:21px }
+#aojiru-lp .premium .heroPoints>div:last-child b { font-size:9px }
+#aojiru-lp .premium .trialPrice strong { font-size:64px }
+#aojiru-lp .premium .nutritionNumbers strong { font-size:30px }
+#aojiru-lp .premium .routineSection h3 { font-size:23px }
+#aojiru-lp .premium .trialIntro h3 { font-size:27px }
+#aojiru-lp .premium .noSubscription { font-size:15px }
+#aojiru-lp .premium .purchaseButton strong { font-size:21px }
+}
+#aojiru-lp .stage { background:radial-gradient(ellipse at 50% 38%,#fffdec 10%,#f3fbd8 55%,#c8e991);border-inline:1px solid #fff5 }
+#aojiru-lp .intro { background:radial-gradient(ellipse at 50% 30%,#fffceb 5%,#e7f9be 50%,#a8db70);padding:20px 24px }
+#aojiru-lp .introKicker { background:#fff;color:#44813b;border:2px solid #fff;border-radius:30px;box-shadow:0 4px 0 #679e4360;padding:8px 17px;font-size:15px }
+#aojiru-lp .titleLogo { width:105%;max-width:450px;margin:14px 0 0;filter:drop-shadow(0 6px 0 #73994722) }
+#aojiru-lp .introCup { position:relative;width:150px;height:150px;margin:0 0 2px;filter:drop-shadow(0 7px 7px #617b3020);animation:aojiru-mascotFloat 2.4s ease-in-out infinite }
+#aojiru-lp .intro h1 { font-size:20px;color:#387443;margin:4px 0 16px;line-height:1.7 }
+#aojiru-lp .intro h1 span { font-size:14px }
+#aojiru-lp .start { font-family:inherit;background:linear-gradient(#ffbb4e,#f39432);border:3px solid #fff3;border-radius:40px;box-shadow:0 6px 0 #bd7430,0 10px 18px #92702a20;color:#fff;font-size:21px;text-shadow:0 2px 0 #bb79284d;padding:14px 8px }
+#aojiru-lp .start small { font-size:12px;color:#fff6dd;letter-spacing:.12em;margin-top:2px }
+#aojiru-lp .introOffer { margin-top:20px;font-size:12px;line-height:1.9;color:#537844 }
+#aojiru-lp .introOffer strong { color:#ad6633;font-size:21px }
+#aojiru-lp .intro .textButton { font-size:13px;color:#4d743d;padding:9px }
+#aojiru-lp .stage header { background:#65ac70;color:white;border-bottom:4px solid #4a9053;border-radius:0 0 26px 26px;padding:10px 20px;box-shadow:0 4px 0 #ffffffa0 }
+#aojiru-lp .stage .brand { font-size:21px;text-shadow:0 2px #3d855c40 }
+#aojiru-lp .stage .brand small { font-size:11px;color:#effbdf;font-weight:normal }
+#aojiru-lp .stage .timer { background:#fffbe5;border:3px solid #fff;border-radius:20px;box-shadow:0 3px 0 #397f4435;color:#b07c38;padding:5px 12px;font-size:13px;line-height:1.25 }
+#aojiru-lp .stage .timer span { font-size:28px }
+#aojiru-lp .stage .meter { top:86px;height:25px;background:#d4e7ac;border:3px solid #fff;box-shadow:0 2px 0 #8eaf6455 }
+#aojiru-lp .stage .meterFill { background:linear-gradient(90deg,#9dcc59,#f2d45e);border-radius:30px }
+#aojiru-lp .stage .meterText { line-height:19px;font-size:12px;color:#4e7b3c;text-shadow:0 1px white }
+#aojiru-lp .game { inset:119px 0 40px }
+#aojiru-lp .instruction { top:12px;font-size:17px }
+#aojiru-lp .instruction span { border:2px solid #e2eeba;box-shadow:0 4px 0 #c8d79c70;color:#4c7b3d;padding:11px 12px;border-radius:18px }
+#aojiru-lp .instruction small { font-size:12px;color:#688350 }
+#aojiru-lp .cuteSprite { position:absolute;inset:0;display:block;background-image:url("https://ichinose-pixel.github.io/ikiiki-aojiru-catch/assets/food-friends.webp");background-size:400% 300%;background-repeat:no-repeat }
+#aojiru-lp .sprite-0 { background-position:0% 0% }
+#aojiru-lp .sprite-1 { background-position:33.333333% 0% }
+#aojiru-lp .sprite-2 { background-position:66.666667% 0% }
+#aojiru-lp .sprite-3 { background-position:100% 0% }
+#aojiru-lp .sprite-4 { background-position:0% 50% }
+#aojiru-lp .sprite-5 { background-position:33.333333% 50% }
+#aojiru-lp .sprite-6 { background-position:66.666667% 50% }
+#aojiru-lp .sprite-7 { background-position:100% 50% }
+#aojiru-lp .sprite-8 { background-position:0% 100% }
+#aojiru-lp .sprite-9 { background-position:33.333333% 100% }
+#aojiru-lp .sprite-10 { background-position:66.666667% 100% }
+#aojiru-lp .sprite-11 { background-position:100% 100% }
+#aojiru-lp .spriteCrop { inset:-10px;filter:drop-shadow(0 4px 3px #627a3325) }
+#aojiru-lp .itemLabel { font-size:11px;bottom:-3px;border:1px solid #d3e5b6;color:#50773e;padding:3px 8px;background:#fffffff2;box-shadow:0 2px 0 #b1c78440 }
+#aojiru-lp .bad .itemLabel { background:#ed8275;color:white;border:1px solid white;box-shadow:0 2px 0 #bf685440 }
+#aojiru-lp .basket { width:156px;height:156px;bottom:5px }
+#aojiru-lp .basketArt { position:absolute;inset:-6px;filter:drop-shadow(0 5px 4px #71943c30);transition:transform .14s }
+#aojiru-lp .basketTag { background:#fffbe9;color:#5e8849;border:2px solid white;box-shadow:0 3px 0 #abc57a70;font-size:11px;padding:4px 11px;bottom:-2px }
+#aojiru-lp .basket.catch .basketArt { transform:translateY(-5px) scale(1.1) }
+#aojiru-lp .combo { color:#bd8236;background:#fff8d5;border:2px solid white;border-radius:20px;font-size:22px;box-shadow:0 3px 0 #d9bb6770;top:80px }
+#aojiru-lp .combo small { font-size:10px;letter-spacing:.08em }
+#aojiru-lp .bonus { color:#589744;text-shadow:0 2px white,2px 0 white,-2px 0 white;font-size:22px }
+#aojiru-lp .bonus strong { color:#d2a43d;font-size:29px }
+#aojiru-lp .float { font-size:17px }
+#aojiru-lp .stage .skip { color:#608546;font-size:12px }
+#aojiru-lp .introOffer small { font-size:12px }
+@keyframes aojiru-mascotFloat { 0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)} }
+@media(max-height:760px) {
+#aojiru-lp .intro { padding:14px 20px }
+#aojiru-lp .titleLogo { width:88%;max-height:190px;object-fit:contain;margin-top:10px }
+#aojiru-lp .introCup { width:116px;height:116px;margin:0 }
+#aojiru-lp .intro h1 { font-size:18px;margin:4px 0 11px }
+#aojiru-lp .intro h1 span { font-size:13px }
+#aojiru-lp .start { font-size:19px;padding:12px 7px }
+#aojiru-lp .introOffer { margin-top:16px }
+#aojiru-lp .basket { width:140px;height:140px }
+}
+@media(max-height:620px) {
+#aojiru-lp .titleLogo { max-height:145px;width:82% }
+#aojiru-lp .introCup { width:90px;height:90px }
+#aojiru-lp .intro h1 { font-size:16px;margin:2px 0 8px }
+#aojiru-lp .introKicker { font-size:12px;padding:5px 12px }
+#aojiru-lp .introOffer { font-size:10px;margin-top:13px }
+#aojiru-lp .introOffer strong { font-size:18px }
+#aojiru-lp .intro .textButton { padding:7px }
+#aojiru-lp .start { font-size:18px;padding:10px }
+#aojiru-lp .start small { font-size:10px }
+#aojiru-lp .basket { width:123px;height:123px }
+}
+@media(prefers-reduced-motion:reduce) {
+#aojiru-lp .introCup { animation:none }
+}
