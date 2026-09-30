@@ -410,3 +410,58 @@ html, body { margin:0!important; padding:0!important; min-width:0!important; bac
 @media(prefers-reduced-motion:reduce) {
 #aojiru-lp .introCup { animation:none }
 }
+#aojiru-lp .intro { padding:18px 22px }
+#aojiru-lp .intro .titleLogo { width:84%;max-width:360px;max-height:180px;object-fit:contain;margin:10px 0 4px }
+#aojiru-lp .intro h1 { font-size:18px;margin:4px 0 10px }
+#aojiru-lp .demoStart { display:block;width:100%;padding:0;border:3px solid #fff;border-radius:25px;background:#faffeb;color:#3d7844;box-shadow:0 6px 0 #8faf6555;overflow:hidden;touch-action:none;cursor:pointer;font:inherit }
+#aojiru-lp .demoField { display:block;position:relative;height:218px;background:radial-gradient(ellipse at center,#fffef1,#edf6d4);overflow:hidden;pointer-events:none }
+#aojiru-lp .demoBadge { position:absolute;top:10px;left:12px;background:#fff8;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:bold;z-index:2 }
+#aojiru-lp .demoDrop { position:absolute;top:0;width:84px;height:84px;transform:translate(-50%,-95px);animation:aojiru-demo-drop 4s linear infinite }
+#aojiru-lp .demoDropA { left:30% }
+#aojiru-lp .demoDropB { left:70%;animation-delay:2s }
+#aojiru-lp .demoBasket { position:absolute;bottom:5px;left:30%;width:119px;height:119px;transform:translateX(-50%);animation:aojiru-demo-basket 4s ease-in-out infinite;z-index:2 }
+#aojiru-lp .demoGood { position:absolute;top:85px;left:50%;transform:translateX(-50%);font-size:16px;font-weight:bold;color:#d89936;text-shadow:0 2px white;opacity:0;animation:aojiru-demo-good 4s linear infinite;z-index:3;white-space:nowrap }
+#aojiru-lp .demoTrack { position:absolute;bottom:9px;left:20%;right:20%;border-bottom:3px dotted #b7d18a }
+#aojiru-lp .demoCaption { display:block;padding:12px 8px 13px;background:linear-gradient(#ffbb4e,#f39a35);color:white;font-size:21px;font-weight:bold;text-shadow:0 1px #b7893840 }
+#aojiru-lp .demoCaption small { display:block;font-size:12px;font-weight:normal;line-height:1.7;margin-top:2px }
+#aojiru-lp .introOffer { margin-top:15px;font-size:12px }
+#aojiru-lp .introOffer strong { font-size:20px }
+#aojiru-lp .intro.hide .demoDrop,
+#aojiru-lp .intro.hide .demoBasket,
+#aojiru-lp .intro.hide .demoGood { animation-play-state:paused }
+@keyframes aojiru-demo-drop { 0%{transform:translate(-50%,-90px);opacity:1}37%{transform:translate(-50%,115px);opacity:1}40%,100%{transform:translate(-50%,120px);opacity:0} }
+@keyframes aojiru-demo-basket { 0%,39%{left:30%}50%,89%{left:70%}100%{left:30%} }
+@keyframes aojiru-demo-good { 0%,36%,48%,86%,98%,100%{opacity:0}39%,44%,89%,94%{opacity:1} }
+@media(max-height:760px) {
+#aojiru-lp .intro { padding:13px 18px }
+#aojiru-lp .intro .titleLogo { max-height:140px;width:76%;margin-top:7px }
+#aojiru-lp .intro h1 { font-size:16px;margin:2px 0 8px }
+#aojiru-lp .demoField { height:190px }
+#aojiru-lp .demoBasket { width:110px;height:110px }
+#aojiru-lp .demoDrop { width:75px;height:75px }
+#aojiru-lp .demoCaption { padding:10px 6px;font-size:19px }
+#aojiru-lp .introOffer { margin-top:12px;font-size:11px }
+#aojiru-lp .introOffer strong { font-size:19px }
+#aojiru-lp .intro .textButton { padding:8px }
+}
+@media(max-height:620px) {
+#aojiru-lp .intro .titleLogo { max-height:108px;width:65%;margin:5px 0 2px }
+#aojiru-lp .intro h1 { font-size:14px;margin:2px 0 6px }
+#aojiru-lp .demoField { height:155px }
+#aojiru-lp .demoBasket { width:100px;height:100px }
+#aojiru-lp .demoDrop { width:64px;height:64px }
+#aojiru-lp .demoCaption { font-size:17px;padding:8px 5px }
+#aojiru-lp .demoCaption small { font-size:10px }
+#aojiru-lp .introOffer { font-size:10px;line-height:1.6;margin-top:10px }
+#aojiru-lp .introOffer strong { font-size:17px }
+#aojiru-lp .intro .textButton { font-size:12px;padding:6px }
+}
+@media(prefers-reduced-motion:reduce) {
+#aojiru-lp .demoDrop,
+#aojiru-lp .demoBasket,
+#aojiru-lp .demoGood { animation:none }
+#aojiru-lp .demoDropA { transform:translate(-50%,10px) }
+#aojiru-lp .demoDropB { transform:translate(-50%,45px) }
+#aojiru-lp .demoBasket { left:50% }
+#aojiru-lp .demoGood { display:none }
+}
