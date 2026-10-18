@@ -1,0 +1,11 @@
+2026-10-18 青汁PlayableLP最終版
+
+1. HTML欄：HTML.html の内容ですべて置き換えます。
+2. CSS欄：空欄にします。CSS.css は空のファイルです。
+3. Javascript Head欄：JS-Head.html の内容ですべて置き換えます。
+   squad-revision.css?v=20261018 を読み込みます。
+4. Javascript Body欄：JS-Body.html の内容を script タグごとすべて置き換えます。
+5. 保存後、スマートフォンのプレビューでゲーム開始・15秒後の商品紹介・再プレイ・CTAを確認します。
+
+※ GitHub Pagesへの最終版公開完了後に貼り替えてください。
+※ Squadbeyond管理画面には直接反映していません。

@@ -1,0 +1,126 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../squad-revision.css?v=20261018"></head><body><div id="aojiru-lp" lang="ja">
+
+    <main>
+        <section class="stage" id="aojiru-stage" aria-label="朝の栄養キャッチゲーム">
+            <div class="intro" id="aojiru-intro">
+                <div class="introKicker">15秒で、おいしい1杯をつくろう！</div>
+                <img class="titleLogo" src="https://ichinose-pixel.github.io/ikiiki-aojiru-catch/assets/title-cute.webp" alt="朝の栄養キャッチ">
+                <h1>左右に動かして、キャッチ！</h1>
+                <button class="demoStart" id="aojiru-start" type="button" aria-label="ゲームを始める。青汁くんを左右に動かしてキャッチ">
+                    <span class="demoField" aria-hidden="true"><span class="demoBadge">あそびかた</span><span class="demoDrop demoDropA"><span class="cuteSprite sprite-2"></span></span><span class="demoDrop demoDropB"><span class="cuteSprite sprite-3"></span></span><span class="demoBasket"><span class="cuteSprite sprite-0"></span></span><span class="demoGood">キャッチ！</span><span class="demoTrack"></span></span>
+                    <span class="demoCaption">ここに触れてスタート！<small>触れてから15秒。左右に動かすだけ</small></span></button>
+                <div class="introOffer">初めての方限定・定期購入ではありません<br><strong>1箱30袋 1,490円<small>（税込）</small></strong> ＋送料330円</div>
+                <button class="textButton" id="aojiru-skip-intro">先に商品を見る</button>
+            </div>
+            <header>
+                <div class="brand">
+                    <small>15秒で、どれだけ集められる？</small>朝の栄養キャッチ
+                </div>
+                <div class="timer">
+                    <span id="aojiru-time">15</span> 秒
+                </div>
+            </header>
+            <div class="meter">
+                <div class="meterFill" id="aojiru-meter"></div>
+                <div class="meterText">
+                    <span id="aojiru-score">0</span> / 100 ポイント
+                </div>
+            </div>
+            <div class="game" id="aojiru-game">
+                <div class="instruction" id="aojiru-instruction"><span>青汁くんを左右にスライド<small>野菜・ヨーグルトを集めて、お菓子はよけよう</small></span></div>
+                <div class="combo" id="aojiru-combo">
+                    <small>NICE COMBO!</small><span id="aojiru-comboNum">0</span>連続
+                </div>
+                <div class="bonus" id="aojiru-bonus">ラストスパート！<strong>たくさん集めよう</strong>
+                </div>
+                <div class="basket" id="aojiru-basket">
+                    <div class="basketArt" role="img" aria-label="左右に動かす青汁くん"><span class="cuteSprite sprite-0"></span></div>
+                    <div class="basketTag">ここでキャッチ！</div>
+                </div>
+            </div>
+            <button class="textButton skip" id="aojiru-skip">商品を見る</button>
+            <div class="end" id="aojiru-end" aria-hidden="true"></div>
+        </section>
+        <article class="story premium" id="aojiru-story" hidden="">
+            <div class="resultBar">
+                <span class="resultMark" aria-hidden="true">✓</span><span id="aojiru-result" aria-live="polite"></span>
+            </div>
+            <section class="productHero">
+    <div class="storyBridge"><span class="bridgeCharacter" aria-hidden="true"><span class="cuteSprite sprite-0"></span></span><p class="bridgeCopy"><span>集めた栄養を、</span><span>毎日の一杯に。</span></p></div>
+    <h2 id="aojiru-storyTitle" tabindex="-1">甘くて、おいしい。<br><span>だから、つづく。</span></h2>
+    <p class="heroSub">野菜の栄養も、乳酸菌も。<br>抹茶ラテ風のやさしい青汁。</p>
+    <figure class="productPhoto"><img src="https://ichinose-pixel.github.io/ikiiki-aojiru-catch/assets/iced-aojiru.png" width="1200" height="628" alt="氷と水滴が涼やかな青汁の一杯"><figcaption>※写真はイメージ</figcaption></figure>
+    <div class="productIdentity"><p>いきいき乳酸菌とおいしい青汁<span>W</span></p><small>はぴねすくらぶ</small></div>
+    <div class="heroPoints"><div><small>乳酸菌</small><strong>201<span>億個</span></strong><b>配合</b></div><div><small>素材にこだわる</small><strong>16<span>種類の</span></strong><b>国産素材</b></div><div><small>1杯あたり</small><strong><span>約</span>50<span>円</span></strong><b>初回限定価格より算出</b></div></div>
+    <p class="unitPriceNote">※1杯1袋として、初回限定価格1,490円（税込）÷30袋で算出。送料別。</p>
+    <a class="offerJump" href="#aojiru-offer"><b class="halfLabel">初回限定半額</b><strong>1,490円</strong><small>（税込）＋送料330円</small><span>お試し内容を見る</span></a>
+  </section>
+  <section class="tasteSection">
+    <div class="chapter"><span>01</span><p>「青汁って苦そう」<br>そう思っているあなたへ。</p></div>
+    <h3><span class="phrase">毎日、飲みたくなる</span><br>おいしさ。</h3>
+    <figure class="tastePhoto"><img src="https://ichinose-pixel.github.io/ikiiki-aojiru-catch/assets/morning-aojiru.webp" width="1200" height="800" alt="朝の光の中で楽しむ青汁の飲用イメージ" loading="lazy"><figcaption>※写真はイメージ</figcaption></figure>
+    <div class="tasteCopy"><p class="statement">ひと口で、<br><em>抹茶ラテ風のやさしい甘さ。</em></p><p>有機栽培の国産抹茶と<br>甘味ハーブ「ステビア」を配合。<br>毎日続けてほしいから、味にもこだわりました。</p></div>
+    <img class="matchaPhoto" src="https://ichinose-pixel.github.io/ikiiki-aojiru-catch/assets/matcha-stevia.webp" width="750" height="375" alt="国産抹茶と甘味ハーブのステビア" loading="lazy">
+  </section>
+  <section class="nutritionSection">
+    <div class="chapter light"><span>02</span><p>おいしいだけで、終わらない</p></div>
+    <h3>乳酸菌も、野菜の栄養も。<br><em>この一杯に。</em></h3>
+    <div class="lactoPanel"><p class="panelKicker">2種類の乳酸菌を配合</p><p class="bigNumber"><small>合計</small>201<span>億個</span></p><p class="yogurtEquivalent">ヨーグルト約<strong>20</strong>個分</p><div class="lactoPair"><div><img src="https://ichinose-pixel.github.io/ikiiki-aojiru-catch/assets/ec12-detail.webp" width="262" height="262" alt="乳酸菌EC-12のイメージ" loading="lazy"><p>EC-12<strong class="bacteriaRole">免疫細胞の働きを<br>サポートする。</strong></p></div><span class="plus">＋</span><div><img src="https://ichinose-pixel.github.io/ikiiki-aojiru-catch/assets/lacris-detail.webp" width="262" height="262" alt="乳酸菌ラクリスのイメージ" loading="lazy"><p>ラクリス<sup>®</sup><strong class="bacteriaRole">生きたまま腸まで<br>届き、腸内環境を<br>整える。</strong></p></div></div><p class="microNote">乳酸菌の画像はイメージです</p></div>
+    <div class="nutrientList"><h4>ビタミン・カロテノイド15種類</h4><p>α-カロテン（ビタミンA）／ β-カロテン（ビタミンA）／ ビタミンC ／ ビタミンD ／ α-トコフェロール（ビタミンE）／ γ-トコフェロール（ビタミンE）／ ビタミンB1 ／ ビタミンB2 ／ ビタミンK ／ ナイアシン ／ 葉酸 ／ パントテン酸 ／ ビオチン</p><h4>ミネラル9種類</h4><p>鉄分 ／ カルシウム ／ カリウム ／ マグネシウム ／ 亜鉛 ／ ナトリウム ／ リン ／ 銅 ／ マンガン</p></div>
+    <p class="nutritionText">食事で不足しがちな栄養を、<br>おいしい習慣でサポート。</p>
+  </section>
+  <section class="ingredientsSection">
+    <div class="chapter"><span>03</span><p>毎日の一杯だから、素材も大切に</p></div>
+    <h3>選び抜いた、<br><em>16種類の国産素材。</em></h3>
+    <p class="sectionIntro">九州産大麦若葉、島根産はとむぎ若葉。<br>日本の素材を、ぎゅっと詰め込みました。</p>
+    <div class="originPair"><div><small>九州産</small><strong>大麦若葉</strong></div><div><small>島根産</small><strong>はとむぎ若葉</strong></div></div>
+    <figure class="ingredientsPhoto nutritionCompare"><img src="https://ichinose-pixel.github.io/ikiiki-aojiru-catch/assets/nutrition-comparison.webp" width="750" height="1266" alt="不足しがちな栄養がまとめて補える。この1杯に栄養ぎっしり。各食品との栄養比較" loading="lazy"></figure>
+    <div class="freeFrom"><span>保存料<strong>不使用</strong></span><span>着色料<strong>不使用</strong></span><span>香料<strong>不使用</strong></span></div>
+  </section>
+  <section class="routineSection"><img src="https://ichinose-pixel.github.io/ikiiki-aojiru-catch/assets/pour-detail.webp" width="465" height="740" alt="水に溶ける青汁のイメージ" loading="lazy" class="">
+                <div>
+                    <p class="routineLabel">忙しい朝にも。</p>
+                    <h3>水にサッと。<br>手間いらず。</h3>
+                    <p>溶けやすい粉末タイプ。<br>毎日の一杯を、<br>もっと気軽に。</p>
+                </div>
+            </section>
+            <section class="trialSection" id="aojiru-offer">
+                <div class="trialIntro">
+                    <p>おいしい毎日、ここから。</p>
+                    <h3>まずは1箱、<br>試してみませんか？</h3>
+                </div>
+                <div class="trialCard">
+                    <div class="trialRibbon">初めての方限定のお試しキャンペーン</div>
+                    <img class="trialProduct" src="https://ichinose-pixel.github.io/ikiiki-aojiru-catch/assets/product-scene.webp" width="750" height="566" alt="お試し商品 いきいき乳酸菌とおいしい青汁W" loading="lazy">
+                    <div class="trialBody">
+                        <h4>いきいき乳酸菌とおいしい青汁W</h4>
+                        <div class="priceCompare">
+                            <span>通常価格 <s>2,980円</s><small>（税込）</small></span><b>初回半額</b>
+                        </div>
+                        <div class="trialPrice">
+                            <strong>1,490</strong>
+                            <div>
+                                <span>円</span><small>税込</small>
+                            </div>
+                        </div>
+                        <p class="shippingLine">送料330円</p>
+                        <p class="noSubscription"><span>✓</span> 定期購入ではありません</p>
+                        <a class="purchaseButton" href="https://www.e-hapi.com/shop/lp/109624_02.aspx?affiliate=M1"><small>初回限定・お一人様1回限り</small><strong>半額でお試しする</strong></a>
+                        <p class="trialNote">ゲームの結果にかかわらずお申し込みいただけます。</p>
+                    </div>
+                </div>
+                <button class="replay premiumReplay" id="aojiru-replay">もう一度ゲームで遊ぶ</button>
+            </section>
+            <footer class="premiumFooter">
+                <p>いきいき乳酸菌とおいしい青汁W</p>
+                <span>商品提供：はぴねすくらぶ</span><small>ゲーム内の食材・演出はイメージです。<br>獲得ポイントは実際の栄養量を示すものではありません。</small>
+            </footer>
+        </article>
+    </main>
+    <aside class="sticky premiumSticky" hidden="">
+        <div class="sb-fixed">
+            <small class="sb-fixed">初回半額・定期購入ではありません</small><span class="sb-fixed"><strong class="sb-fixed">1,490</strong>円<small class="sb-fixed">（税込）</small></span><small class="sb-fixed">＋送料330円</small>
+        </div>
+        <a class="purchaseButton sb-fixed" href="https://www.e-hapi.com/shop/lp/109624_02.aspx?affiliate=M1">半額でお試しする</a>
+    </aside>
+</div><script src="../squad-revision.js"></script></body></html>

@@ -15,3 +15,10 @@
 .yogurtEquivalent{font-size:17px;line-height:1.7;color:#477027;margin:0 0 18px!important}.yogurtEquivalent strong{font-size:27px;padding-inline:3px}
 
 @media(max-width:360px){.premium .nutritionSection>h3{font-size:23px;letter-spacing:-.055em}}
+
+/* 2026-10-18: place the requested bacteria roles beneath each image. */
+.premium .lactoPair p .bacteriaRole{display:block;font-size:13px;font-weight:700;line-height:1.8;letter-spacing:0;margin-top:10px;white-space:normal}.premium .lactoPair>div{min-width:0}.premium .lactoPair p{margin-bottom:0}@media(max-width:360px){.premium .lactoPair p .bacteriaRole{font-size:12px}}
+
+.premium .lactoPair{align-items:start;gap:4px}.premium .lactoPair>div{flex-direction:column;gap:8px;text-align:center}.premium .lactoPair img{width:52px;height:52px;flex:none}.premium .lactoPair .plus{align-self:center}.premium .lactoPair p{width:100%;white-space:normal}.premium .lactoPair p .bacteriaRole{font-size:12px;line-height:1.8;overflow-wrap:normal;word-break:normal}
+
+.productPhoto img{aspect-ratio:auto;height:auto;object-fit:contain}
